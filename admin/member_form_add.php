@@ -39,7 +39,7 @@
                     <div class="form-group row">
                       <label class="col-sm-2"></label>
                       <div class="col-sm-4">
-                            <button type="button" class="btn btn-primary">เพิ่มข้อมูล</button>
+                            <button type="submit" class="btn btn-primary">เพิ่มข้อมูล</button>
                             <a href="member.php" class="btn btn-danger">ยกเลิก</a>
                       </div> 
                     </div>  
