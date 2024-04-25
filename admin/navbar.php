@@ -7,10 +7,7 @@
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index.php" class="nav-link">หน้าหลัก</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+      </li>     
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
           Dropdown

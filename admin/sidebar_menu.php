@@ -25,65 +25,30 @@
                 หน้าหลัก
               </p>
             </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="index.php" class="nav-link">
-             <i class="nav-icon fas fa-th"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="admin.php" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                จัดการข้อมูล Admin
-              </p>
-            </a>
-          </li>
+          </li>         
 
           <li class="nav-item">
             <a href="member.php" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-user"></i>
               <p>
-                จัดการสมาชิก
+                จัดการข้อมูลบุคลากร
               </p>
             </a>
           </li>
-
+          <ion-icon name="exit-outline"></ion-icon>
           <li class="nav-item">
-            <a href="data.php" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
-              <p>
-                รายการข้อมูล
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="form.php" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
-              <p>
-                หมวดหมู่
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="form.php" class="nav-link">
-              <i class="nav-icon far fa-edit"></i>
+            <a href="datatable.php" class="nav-link">
+              <i class="nav-icon fas fa-database"></i>
               <p>
                 ข้อมูลครุภัณฑ์
               </p>
             </a>
           </li>
-
+          
+          
           <li class="nav-item">
             <a href="login.php" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
+              <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
                 ออกจากระบบ
               </p>

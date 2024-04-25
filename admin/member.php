@@ -3,7 +3,7 @@
     include 'navbar.php';
     include 'sidebar_menu.php';
 
-    //สร้างเงื่อนไในการเรียกใช้ไฟลล์
+    //สร้างเงื่อนในการเรียกใช้ไฟลล์
     $act = (isset($_GET['act']) ? $_GET['act'] : '' );
 
     if($act =='add'){
@@ -11,6 +11,12 @@
 
     }else if($act =='delete') {
         include 'member_delete.php';
+
+    }else if($act =='edit') {
+        include 'member_form_edit.php';
+
+    }else if($act =='editPwd') {
+        include 'member_form_edit_password.php';
 
     }else{
         include 'member_list.php';
