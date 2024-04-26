@@ -24,7 +24,7 @@
         </div>          
             <div class="card-body login-card-body">
                 <p class="login-box-msg">login เข้าใช้งานระบบครุภัณฑ์ อร.</p>
-                <form action="../../index3.html" method="post">
+                <form action="admin/index.php" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Username">
                         <div class="input-group-append">

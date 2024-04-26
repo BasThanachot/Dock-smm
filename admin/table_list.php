@@ -1,8 +1,8 @@
 <?php 
 //คิวรี่ข้อมูลครุภัณฑ์
-$squeryTable = $condb->prepare("SELECT * FROM tbl_table");
-$squeryTable->execute();
-$rsTable = $squeryTable->fetchAll();
+ $squeryTable = $condb->prepare("SELECT * FROM tbl_table");
+ $squeryTable->execute();
+ $rsTable = $squeryTable->fetchAll();
 
 ?>  
   
@@ -15,7 +15,7 @@ $rsTable = $squeryTable->fetchAll();
         <div class="row mb-2">
           <div class="col-sm-6">
             <h1>ข้อมูลครุภัณฑ์
-              <a href="main_content_table_add.php" class="btn btn-primary">+เพิ่มข้อมูล</a>
+              <a href="datatable.php?act=add" class="btn btn-primary">+เพิ่มข้อมูล</a>
             </h1>
           </div>
         </div>
@@ -28,7 +28,13 @@ $rsTable = $squeryTable->fetchAll();
         <div class="row">
           <div class="col-12">           
             <div class="card">
-              
+            <div class="card-header">
+                <a href="" class="btn btn-info">ส่งซ่อม</a>
+                <a href="" class="btn btn-success">ยืม/ใช้งาน</a>
+                <a href="" class="btn btn-warning">ชำรุด</a>
+                <a href="" class="btn btn-danger">ส่งครุจำหน่าย</a>               
+                <a href="" class="btn btn-danger">สูญหาย</a>
+              </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -56,24 +62,21 @@ $rsTable = $squeryTable->fetchAll();
                     <td><?=$row['no'];?> </td>
                     <td><?=$row['sn'];?> </td>
                     <td><?=$row['date'];?> </td>
-                    <td><?=$row['price'];?> </td>
+                    <td><?=number_format($row['price']),2;?> </td>
                     <td><?=$row['status'];?> </td>
-                    <td>
-                      <button class="btn btn-success btn-sm actionButton" data-action="watch">
+                    <td align="center">
+                      <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">
                             <i class="fas fa-eye me-1"></i> 
-                      </button>
+                      </a>
                     </td>
 
-                    <td>
-                      <button class="btn btn-warning btn-sm actionButton" data-action="edit">
-                            <i class="fas fa-edit me-1"></i> 
-                      </button>
+                    <td  align="center">
+                      <a href="datatable.php?id=<?=$row['id'];?>&act=edit" class="btn btn-warning btn-sm actionButton" data-action="edit">
+                            <i class="fas fa-edit me-1"></i></a>
                     </td>
 
-                    <td>                                                
-                        <button class="btn btn-danger btn-sm actionButton" data-action="delete">
-                            <i class="fas fa-trash-alt me-1"></i> 
-                        </button>
+                    <td align="center">                                                
+                      <a href="datatable.php?id=<?=$row['id'];?>&act=delete" class="btn btn-danger btn-sm actionButton" data-action="delete" onclick="return confirm('ยืนยันการลลบข้อมูล??');"> <i class="fas fa-trash-alt me-1"></i></a>
                     </td>
 
                   </tr>
