@@ -135,11 +135,8 @@
                             <select name="status" class="form-control" required>
                               <option value="<?php echo $row['status'];?>"> <?php echo $row['status'];?> </option>
                               <option disabled>-- เลือกข้อมูล --</option>
-                              <option value="ปกติ"> ส่งซ่อม </option>
-                              <option value="ยืม/ใช้งาน"> ยืม/ใช้งาน </option>
-                              <option value="ชำรุด"> ชำรุด </option> 
-                              <option value="ส่งครุจำหน่าย"> ส่งครุจำหน่าย </option>     
-                              <option value="สูญหาย"> สูญหาย </option>  
+                              <option value="ปกติ"> ปกติ </option>
+                              <option value="ไม่ปกติ"> ไม่ปกติ </option>  
                             </select>
                       </div>                      
                     </div>                   

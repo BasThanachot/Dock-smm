@@ -1,5 +1,5 @@
 <?php
-    if(isset($_GET['id']) && $_GET['act'] == 'edit'){
+    if(isset($_GET['id']) && $_GET['act'] == 'view'){
 
       //single row query แสดงแค่ 1 รายการ
       $stmtTableDetail = $condb->prepare("SELECT * FROM tbl_table WHERE id=?");
@@ -21,7 +21,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>ฟอร์มแก้ไขข้อมูลครุภัณฑ์</h1>
+            <h1>ข้อมูลครุภัณฑ์</h1>
           </div>         
         </div>
       </div><!-- /.container-fluid -->
@@ -41,27 +41,27 @@
                     <div class="form-group row">
                       <label class="col-sm-2">ส่วนราชการ</label>
                       <div class="col-sm-4">
-                            <input type="text" name="governmentagency" class="form-control" value="<?php echo $row['governmentagency'];?>" >
+                            <input type="text" name="governmentagency" class="form-control" value="<?php echo $row['governmentagency'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">หน่วยงาน</label>
                       <div class="col-sm-4">
-                            <input type="text" name="agen" class="form-control" value="<?php echo $row['agen'];?>" >
+                            <input type="text" name="agen" class="form-control" value="<?php echo $row['agen'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ประเภท</label>
                       <div class="col-sm-3">
-                            <select name="type_group" class="form-control" required>
+                            <select disabled name="type_group" class="form-control" required>
                               <option value="<?php echo $row['type_group'];?>"> <?php echo $row['type_group'];?> </option>
                               <option disabled>-- เลือกข้อมูล --</option>
                               <option value="เคส"> เคส </option>
                               <option value="จอภาพ"> จอภาพ </option>
-                              <option value="เครื่องปริ้น"> เครื่องปริ้น </option>
-                              <option value="เครื่องสำรองไฟ"> เครื่องสำรองไฟ </option>
+                              <option value="เครื่องปริ้น"> เครื่องปริ้น </option>p echo $row['type_group'];?>"> <?php echo $row['type_group'];?> </option>
+                              
                             </select>
                       </div>                      
                     </div>
@@ -69,77 +69,75 @@
                     <div class="form-group row">
                       <label class="col-sm-2">เลขทะเบียนครุภัณฑ์</label>
                       <div class="col-sm-4">
-                            <input type="text" name="no" class="form-control" value="<?php echo $row['no'];?>" >
+                            <input type="text" name="no" class="form-control" value="<?php echo $row['no'];?>"disabled >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ลักษณะ/คุณสมบัติ</label>
                       <div class="col-sm-4">
-                            <input type="text" name="detail" class="form-control" value="<?php echo $row['detail'];?>" >
+                            <input type="text" name="detail" class="form-control" value="<?php echo $row['detail'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">รุ่น/แบบ</label>
                       <div class="col-sm-4">
-                            <input type="text" name="sn" class="form-control" value="<?php echo $row['sn'];?>" >
+                            <input type="text" name="sn" class="form-control" value="<?php echo $row['sn'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">สถานที่ตั้ง/หน่วยรับผิดชอบ</label>
                       <div class="col-sm-4">
-                            <input type="text" name="location" class="form-control" value="<?php echo $row['location'];?>" >
+                            <input type="text" name="location" class="form-control" value="<?php echo $row['location'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">วัน/เดือน/ปี</label>
                       <div class="col-sm-4">
-                            <input type="date" name="date" class="form-control" value="<?php echo $row['date'];?>" >
+                            <input type="date" name="date" class="form-control" value="<?php echo $row['date'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">วิธีการได้มา</label>
                       <div class="col-sm-4">
-                            <input type="text" name="supply" class="form-control" value="<?php echo $row['supply'];?>" >
+                            <input type="text" name="supply" class="form-control" value="<?php echo $row['supply'];?>"disabled >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ที่เอกสาร</label>
                       <div class="col-sm-4">
-                            <input type="text" name="doc" class="form-control" value="<?php echo $row['doc'];?>" >
+                            <input type="text" name="doc" class="form-control" value="<?php echo $row['doc'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ราคาหน่วย/ชุด/กลุ่ม</label>
                       <div class="col-sm-4">
-                            <input type="text" name="price" class="form-control" value="<?php echo $row['price'];?>" >
+                            <input type="text" name="price" class="form-control" value="<?php echo $row['price'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">หลักฐานการจ่าย</label>
                       <div class="col-sm-4">
-                            <input type="text" name="evidence" class="form-control" value="<?php echo $row['evidence'];?>" >
+                            <input type="text" name="evidence" class="form-control" value="<?php echo $row['evidence'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">สถานะ</label>
                       <div class="col-sm-3">
-                            <select name="status" class="form-control" required>
-                              <option value="<?php echo $row['status'];?>"> <?php echo $row['status'];?> </option>
+                            <select disabled name="status" class="form-control" required>
+                            <option value="<?php echo $row['status'];?>"> <?php echo $row['status'];?> </option>
                               <option disabled>-- เลือกข้อมูล --</option>
-                              <option value="ปกติ"> ส่งซ่อม </option>
-                              <option value="ยืม/ใช้งาน"> ยืม/ใช้งาน </option>
-                              <option value="ชำรุด"> ชำรุด </option> 
-                              <option value="ส่งครุจำหน่าย"> ส่งครุจำหน่าย </option>     
-                              <option value="สูญหาย"> สูญหาย </option>  
+                              <option value="ปกติ"> ปกติ </option>
+                              <option value="ไม่ปกติ"> ไม่ปกติ </option>
+                               
                             </select>
                       </div>                      
                     </div>                   
@@ -148,8 +146,7 @@
                       <label class="col-sm-2"></label>
                       <div class="col-sm-4">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                            <button type="submit" class="btn btn-primary">แก้ไขข้อมูล</button>
-                            <a href="datatable.php" class="btn btn-danger">ยกเลิก</a>
+                            <a href="datatable.php" class="btn btn-primary">ตกลง</a>
                       </div> 
                     </div>  
                        
@@ -211,48 +208,7 @@
                   status=:status
                   WHERE id=:id
                   ");
-                  //bindParam
-                    $stmtUpdate->bindParam(':id', $id , PDO::PARAM_INT);
-                    $stmtUpdate->bindParam(':governmentagency', $governmentagency, PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':agen', $agen , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':type_group', $type_group , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':no', $no , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':detail', $detail , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':sn', $sn , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':location', $location , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':date', $date , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':supply', $supply , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':doc', $doc , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':price', $price , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':evidence', $evidence , PDO::PARAM_STR);
-                    $stmtUpdate->bindParam(':status', $status , PDO::PARAM_STR);
-                                          
-                    $result = $stmtUpdate->execute();
-
-                  $condb = null; //close connect db
-                  if($result){
-                    echo '<script>
-                         setTimeout(function() {
-                          swal({
-                              title: "แก้ไขข้อมูลสำเร็จ",
-                              type: "success"
-                          }, function() {
-                              window.location = "datatable.php?id='.$id.'&act=edit"; //หน้าที่ต้องการให้กระโดดไป
-                          });
-                        }, 1000);
-                    </script>';
-                }else{
-                   echo '<script>
-                         setTimeout(function() {
-                          swal({
-                              title: "เกิดข้อผิดพลาด",
-                              type: "error"
-                          }, function() {
-                              window.location = "datatable.php"; //หน้าที่ต้องการให้กระโดดไป
-                          });
-                        }, 1000);
-                    </script>';
-                }
+                 
                 }//isset
                 ?>
                     

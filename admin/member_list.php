@@ -1,9 +1,11 @@
+
 <?php
 //คิวรี่ข้มูลลสมาชิก
- $squeryMember = $condb->prepare("SELECT * FROM tbl_member");
+ $squeryMember = $condb->prepare("SELECT * FROM tbl_member ORDER BY id DESC");
  $squeryMember->execute();
  $rsMember = $squeryMember->fetchAll();
 
+ //print_r($_SESSION);
 
  //echo '<pre>';
  //$squeryMember->debugDumpParams();
@@ -18,10 +20,10 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h2>จัดการข้อมูลบุคลากร
+            <h3>จัดการข้อมูลบุคลากร
 
             <a href="member.php?act=add" class="btn btn-primary">+เพิ่มบุคลากร</a>
-            </h2>
+            </h3>
           </div>
         </div>
       </div><!-- /.container-fluid -->

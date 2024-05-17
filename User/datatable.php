@@ -21,10 +21,7 @@
     }else{
         include 'table_list.php';
     }
-
-
-    // list หรือ view วะ ตอนนี้
-         
+          
     include 'footer.php';
 
 ?>

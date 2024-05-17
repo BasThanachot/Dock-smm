@@ -51,8 +51,8 @@
                             <select name="title_name" class="form-control" required>
                               <option value="<?php echo $row['title_name'];?>"> <?php echo $row['title_name'];?> </option>
                               <option disabled>-- เลือกข้อมูล --</option>
-                              <option value="ผู้ดูแลระบบ (Admin)"> ผู้ดูแลระบบ (Admin) </option>
-                              <option value="ผู้ใช้งานระบบ (Users)"> ผู้ใช้งานระบบ (Users) </option>
+                              <option value="Admin"> Admin </option>
+                              <option value="Users"> Users </option>
                             </select>
                       </div>                      
                     </div>

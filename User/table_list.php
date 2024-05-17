@@ -13,7 +13,7 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-4">
+          <div class="col-sm-6">
             <h1>ข้อมูลครุภัณฑ์
               <a href="datatable.php?act=add" class="btn btn-primary">+เพิ่มข้อมูล</a>
             </h1>
@@ -30,7 +30,7 @@
             <div class="card">
             <div class="card-header">
                 <a href="datatable.php" class="btn btn-info">ส่งซ่อม</a>
-                <a href="table_give.php" class="btn btn-success">ยืม/ใช้งาน</a>
+                <a href="" class="btn btn-success">ยืม/ใช้งาน</a>
                 <a href="" class="btn btn-warning">ชำรุด</a>
                 <a href="" class="btn btn-danger">ส่งครุจำหน่าย</a>               
                 <a href="" class="btn btn-danger">สูญหาย</a>
