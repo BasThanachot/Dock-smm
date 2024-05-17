@@ -1,7 +1,18 @@
 <?php
+
+session_start();
+
+if( $_SESSION["title_name"] != "Admin"){ 
+    header("location: /Dock-smm/login.php");
+}
+// if (!isset($_SESSION['username'])) {
+//     header("location: /Dock-smm/login.php");
+// }
+
     include 'header.php';
     include 'navbar.php';
     include 'sidebar_menu.php';
+
     
     //สร้างเงื่อนในการเรียกใช้ไฟลล์
     $act = (isset($_GET['act']) ? $_GET['act'] : '' );

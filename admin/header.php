@@ -1,5 +1,5 @@
 <?php 
-session_start(); // เริ่ม session
+// session_start(); // เริ่ม session
 //ไฟล์เชื่อมต่อฐานข้อมูล
 require_once '../config/condb.php';
 

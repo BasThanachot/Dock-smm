@@ -27,6 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["name"] = $row['name'];
             $_SESSION["title_name"] = $row['title_name'];
             // Redirect ไปยังหน้าหลักหรือหน้าที่คุณต้องการ
+
+
+            // setcookie('user_login',  $username, time() + (10 * 365 * 24 * 60 *  60) );
+            // setcookie('user_password', $password, time() + (10 * 365 * 24 * 60 *  60) );
+
             if($_SESSION["title_name"]=="Admin"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
  
                 Header("Location: /Dock-smm/admin/index.php");

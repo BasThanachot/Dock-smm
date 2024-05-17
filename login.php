@@ -24,6 +24,8 @@
         </div>          
             <div class="card-body login-card-body">
                 <p class="login-box-msg">login เข้าใช้งานระบบครุภัณฑ์ อร.</p>
+                
+                
                 <form action="login_check.php" method="post">
                     <div class="input-group mb-3">
                         <input type="text" name="username" class="form-control" placeholder="Username" required>
@@ -51,7 +53,7 @@
                     <div class="row">
                         
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
+                            <button type="submit" name="submit" class="btn btn-primary btn-block">เข้าสู่ระบบ</button>
                         </div>
 
                     </div>
