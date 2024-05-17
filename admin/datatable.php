@@ -29,6 +29,11 @@ if( $_SESSION["title_name"] != "Admin"){
     }else if($act =='view') {
         include 'table_view.php';
 
+    }else if($act =='s2') {
+        include 'table_lend.php';
+
+        
+
     }else{
         include 'table_list.php';
     }
