@@ -24,6 +24,7 @@ foreach ($statuses as $statusKey) {
 ?>
 
 
+
   
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -59,13 +60,12 @@ foreach ($statuses as $statusKey) {
                 <thead>
                   <tr class="table-active">
                     <th width="5%" class="text-center">No.</th>
-                    <th width="22%">เลขทะเบียนครุภัณฑ์</th>
-                    <th width="22%">S/N</th>
-                    <th width="15%">วัน/เดือน/ปี</th>
-                    <th width="12%">ราคา/ชุด</th>
-                    <th width="9%" class="text-center">สถานะ</th>
+                    <th width="28%">เลขทะเบียนครุภัณฑ์</th>
+                    <th width="25%">S/N</th>
+                    <th width="12%">ประเภท</th>
+                    <th width="11%" class="text-center">สถานะ</th>
                     <th width="5%" class="text-center">ดู</th>
-                    <th width="5%" class="text-center">แก้ไข</th>
+                    <th width="11%" class="text-center">แก้ไข</th>
                     <th width="5%" class="text-center">ลบ</th>
                   </tr>
                 </thead>
@@ -77,8 +77,7 @@ foreach ($statuses as $statusKey) {
                     <td align="center"> <?php echo $i++ ?></td>
                     <td><?=$row['no'];?> </td>
                     <td><?=$row['sn'];?> </td>
-                    <td><?=$row['date'];?> </td>
-                    <td><?=number_format($row['price']);?> </td>
+                    <td><?=$row['type_group'];?> </td>
                     <td><?=$row['status'];?> </td>
                     <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">

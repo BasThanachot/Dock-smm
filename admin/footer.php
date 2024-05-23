@@ -1,9 +1,8 @@
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong></strong>
-    
+<footer class="main-footer">
+    <strong>Copyright &copy; 2024 <a href="#">กรมอู่ทหารเรือ</a>.</strong>
+    All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      
+      <b>Thanachot H.</b> 78086
     </div>
   </footer>
 
@@ -51,8 +50,7 @@
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": true, "autoWidth": false,
-      "aaSorting": [[ 0, "desc"]],
-      "buttons": [ "excel ", "pdf", "print"]//["copy", "csv", "excel", "pdf", "print", "colvis"]
+      // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,

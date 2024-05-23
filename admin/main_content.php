@@ -24,12 +24,12 @@
               <div class="inner">
                 <h3>150</h3>
 
-                <p>จำนวน้อมูลครุภัณฑ์</p>
+                <p>รายการทรัพย์สิน</p>
               </div>
               <div class="icon">
                 <i class="fas fa-database"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="datatable.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -44,7 +44,7 @@
               <div class="icon">
                 <i class="fas fa-database"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="datatable.php?act=s1" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -59,7 +59,7 @@
               <div class="icon">
                 <i class="fas fa-database"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="datatable.php?act=s2" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -74,7 +74,7 @@
               <div class="icon">
                 <i class="fas fa-database"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="datatable.php?act=s3" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -89,7 +89,7 @@
               <div class="icon">
                 <i class="fas fa-database"></i>
               </div>
-              
+              <a href="datatable.php?act=s4" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -105,7 +105,7 @@
               <div class="icon">
                 <i class="fas fa-database"></i>
               </div>
-              
+              <a href="datatable.php?act=s5" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->

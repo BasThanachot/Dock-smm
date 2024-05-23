@@ -6,7 +6,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="datatable.php" class="nav-link">จัดการข้อมูลครุภัณฑ์</a>
+        <a href="index.php" class="nav-link">จัดการข้อมูลครุภัณฑ์</a>
       </li>
       
     </ul>

@@ -1,6 +1,6 @@
 <?php 
 // Get status from URL parameters
-$status = 'ยืม/ใช้งาน';
+$status = (isset($_GET['status']) ? $_GET['status'] : '');
 
 // Query to fetch items based on status
 if ($status) {
@@ -22,6 +22,7 @@ foreach ($statuses as $statusKey) {
     $statusCounts[$statusKey] = $result['count'];
 }
 ?>
+
 
 
   
@@ -46,7 +47,7 @@ foreach ($statuses as $statusKey) {
       <div class="row">
         <div class="col-12">           
           <div class="card">
-          <div class="card-header">
+            <div class="card-header">
               <a href="datatable.php?act=s1" class="btn btn-info">ส่งซ่อม (<?= $statusCounts['ส่งซ่อม'] ?>)</a>
               <a href="datatable.php?act=s2" class="btn btn-success">ยืม/ใช้งาน (<?= $statusCounts['ยืม/ใช้งาน'] ?>)</a>
               <a href="datatable.php?act=s3" class="btn btn-warning">ชำรุด (<?= $statusCounts['ชำรุด'] ?>)</a>
@@ -59,13 +60,13 @@ foreach ($statuses as $statusKey) {
                 <thead>
                   <tr class="table-active">
                     <th width="5%" class="text-center">No.</th>
-                    <th width="22%">เลขทะเบียนครุภัณฑ์</th>
-                    <th width="22%">S/N</th>
+                    <th width="20%">เลขทะเบียนครุภัณฑ์</th>
+                    <th width="18%">S/N</th>
                     <th width="15%">วัน/เดือน/ปี</th>
-                    <th width="12%">ราคา/ชุด</th>
-                    <th width="9%" class="text-center">สถานะ</th>
+                    <th width="12%">ประเภท</th>
+                    <th width="11%" class="text-center">สถานะ</th>
                     <th width="5%" class="text-center">ดู</th>
-                    <th width="5%" class="text-center">แก้ไข</th>
+                    <th width="11%" class="text-center">แก้ไข</th>
                     <th width="5%" class="text-center">ลบ</th>
                   </tr>
                 </thead>
@@ -78,24 +79,20 @@ foreach ($statuses as $statusKey) {
                     <td><?=$row['no'];?> </td>
                     <td><?=$row['sn'];?> </td>
                     <td><?=$row['date'];?> </td>
-                    <td><?=number_format($row['price']);?> </td>
+                    <td><?=$row['type_group'];?> </td>
                     <td><?=$row['status'];?> </td>
                     <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">
-                      <p>รับคืน</p>  
-                      <i class="fas fa-eye me-1"></i> 
+                        <i class="fas fa-eye me-1"></i> 
                       </a>
                     </td>
                     <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=edit" class="btn btn-warning btn-sm actionButton" data-action="edit">
-                      <p>something1</p>  
-                      <i class="fas fa-edit me-1"></i></a>
+                        <i class="fas fa-edit me-1"></i></a>
                     </td>
                     <td align="center">                                                
                       <a href="datatable.php?id=<?=$row['id'];?>&act=delete" class="btn btn-danger btn-sm actionButton" data-action="delete" onclick="return confirm('ยืนยันการลลบข้อมูล??');"> 
-                      <p>something1</p>  
-  
-                      <i class="fas fa-trash-alt me-1"></i></a>
+                        <i class="fas fa-trash-alt me-1"></i></a>
                     </td>
                   </tr>
                   <?php } ?>

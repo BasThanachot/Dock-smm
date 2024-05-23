@@ -35,7 +35,6 @@
               </p>
             </a>
           </li>
-          
           <ion-icon name="exit-outline"></ion-icon>
           <li class="nav-item">
             <a href="datatable.php" class="nav-link">

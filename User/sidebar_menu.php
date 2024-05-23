@@ -8,7 +8,7 @@
           <img src="../assets/dist/img/logo_docker.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="index.php" class="d-block">ระบบครุภัณฑ์ | Users</a>
+          <a href="index.php" class="d-block">ระบบครุภัณฑ์ | Admin</a>
         </div>
       </div>
      
@@ -26,13 +26,13 @@
               </p>
             </a>
           </li>         
-         
+
           <ion-icon name="exit-outline"></ion-icon>
           <li class="nav-item">
             <a href="datatable.php" class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
-                ข้อมูลครุภัณฑ์
+                จัดการข้อมูลครุภัณฑ์
               </p>
             </a>
           </li>
