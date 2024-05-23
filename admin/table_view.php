@@ -76,7 +76,7 @@
                     <div class="form-group row">
                       <label class="col-sm-2">ลักษณะ/คุณสมบัติ</label>
                       <div class="col-sm-4">
-                            <input type="text" name="detail" class="form-control" value="<?php echo $row['detail'];?>" disabled>
+                      <textarea name="detail"disabled class="form-control"  id="" cols="70" rows="6"><?php echo $row['detail'];?></textarea>
                       </div>                      
                     </div>
 
@@ -97,7 +97,7 @@
                     <div class="form-group row">
                       <label class="col-sm-2">วัน/เดือน/ปี</label>
                       <div class="col-sm-4">
-                            <input type="date" name="date" class="form-control" value="<?php echo $row['date'];?>" disabled>
+                            <input type="date(d-m-Y)" name="date" class="form-control" value="<?php echo $row['date'];?>" disabled>
                       </div>                      
                     </div>
 
@@ -135,12 +135,43 @@
                             <select disabled name="status" class="form-control" required>
                             <option value="<?php echo $row['status'];?>"> <?php echo $row['status'];?> </option>
                               <option disabled>-- เลือกข้อมูล --</option>
-                              <option value="ปกติ"> ปกติ </option>
-                              <option value="ไม่ปกติ"> ไม่ปกติ </option>
+                              <option value="ปกติ"> ส่งซ่อม </option>
+                              <option value="ยืม/ใช้งาน"> ยืม/ใช้งาน </option>
+                              <option value="ชำรุด"> ชำรุด </option> 
+                              <option value="ส่งรุจำหน่าย"> ส่งครุจำหน่าย </option>     
+                              <option value="สูญหาย"> สูญหาย </option> 
                                
                             </select>
                       </div>                      
-                    </div>                   
+                    </div>    
+                    
+                    <div class="form-group row">
+                      <label class="col-sm-2">หน่วยที่ใช้งาน</label>
+                      <div class="col-sm-4">
+                            <input type="text" name="agen_lend" class="form-control" value="<?php echo $row['agen_lend'];?>" disabled>
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">ชื่อผู้ใช้งาน</label>
+                      <div class="col-sm-4">
+                            <input type="text" name="name_lend" class="form-control" value="<?php echo $row['name_lend'];?>" disabled>
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">ว/ด/ป ที่ยืม</label>
+                      <div class="col-sm-2">
+                            <input type="date(d-m-Y)" name="date_lend" class="form-control" value="<?php echo $row['date_lend'];?>" disabled>
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">โทร</label>
+                      <div class="col-sm-4">
+                            <input type="text" name="tel_lend" class="form-control" value="<?php echo $row['tel_lend'];?>" disabled>
+                      </div>                      
+                    </div>
                       
                     <div class="form-group row">
                       <label class="col-sm-2"></label>
@@ -172,7 +203,12 @@
                     && isset($_POST['doc']) 
                     && isset($_POST['price']) 
                     && isset($_POST['evidence']) 
-                    && isset($_POST['status'])){
+                    && isset($_POST['status'])
+                    &&isset($_POST['agen_lend']) 
+                    && isset($_POST['name_lend']) 
+                    && isset($_POST['date_lend'])
+                    && isset($_POST['tel_lend'])
+                    ){
                  
 
                   //ประกาศตัวแปรรับค่าจากฟอร์ม
@@ -190,6 +226,11 @@
                   $price = $_POST['price'];
                   $evidence = $_POST['evidence'];
                   $status = $_POST['status'];
+                  $agen_lend = $_POST['agen_lend'];
+                  $name_lend = $_POST['name_lend'];
+                  $date_lend = $_POST['date_lend'];
+                  $tel_lend = $_POST['tel_lend'];
+                  
 
                   //sql update
                   $stmtUpdate = $condb->prepare("UPDATE tbl_table SET 
@@ -205,7 +246,11 @@
                   doc=:doc,
                   price=:price,
                   evidence=:evidence,
-                  status=:status
+                  status=:status,
+                  agen_lend:agen_lend,
+                  name_lend:name_lend,
+                  date_lend:date_lend,
+                  tel_lend:tel_lend,
                   WHERE id=:id
                   ");
                  

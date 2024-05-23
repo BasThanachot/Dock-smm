@@ -87,7 +87,7 @@ foreach ($statuses as $statusKey) {
                     </td>
                     <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=edit" class="btn btn-primary btn-sm actionButton" data-action="edit">
-                      <p>something1</p>  
+                      <p>view</p>  
                       <i class="fas fa-edit me-1"></i></a>
                     </td>
                    

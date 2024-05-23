@@ -44,7 +44,7 @@
                               <option value="เคส"> เคส </option>
                               <option value="จอภาพ"> จอภาพ </option>
                               <option value="เครื่องปริ้น"> เครื่องปริ้น </option>
-                              <option value="เครื่องสำรองไฟ"> เครื่องสำรองไฟ </option>
+                              <option value="เครื่องสำรองไฟ"> เครื่องสำรองไฟ (UPS)</option>
                             </select>
                       </div>                      
                     </div>

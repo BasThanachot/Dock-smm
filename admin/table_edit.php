@@ -76,7 +76,7 @@
                     <div class="form-group row">
                       <label class="col-sm-2">ลักษณะ/คุณสมบัติ</label>
                       <div class="col-sm-4">
-                            <input type="text" name="detail" class="form-control" value="<?php echo $row['detail'];?>" >
+                            <textarea name="detail" class="form-control"  id="" cols="70" rows="6"><?php echo $row['detail'];?></textarea>
                       </div>                      
                     </div>
 
@@ -138,7 +138,7 @@
                               <option value="ส่งซ่อม"> ส่งซ่อม </option>
                               <option value="ยืม/ใช้งาน"> ยืม/ใช้งาน </option>
                               <option value="ชำรุด"> ชำรุด </option> 
-                              <option value="ส่งครุจำหน่าย"> ส่งครุจำหน่าย </option>     
+                              <option value="ส่งรุจำหน่าย"> ส่งรุจำหน่าย </option>     
                               <option value="สูญหาย"> สูญหาย </option>  
                             </select>
                       </div>                      

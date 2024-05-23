@@ -34,6 +34,9 @@ if( $_SESSION["title_name"] != "Admin"){
 
     }else if($act =='s2') {
         include 'table_s2.php';
+     
+    }else if($act =='add_s2') {
+        include 'table_add_s2.php';
 
     }else if($act =='s3') {
         include 'table_s3.php';

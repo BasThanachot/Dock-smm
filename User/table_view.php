@@ -76,7 +76,7 @@
                     <div class="form-group row">
                       <label class="col-sm-2">ลักษณะ/คุณสมบัติ</label>
                       <div class="col-sm-4">
-                            <input type="text" name="detail" class="form-control" value="<?php echo $row['detail'];?>" disabled>
+                      <textarea name="detail"disabled class="form-control"  id="" cols="70" rows="6"><?php echo $row['detail'];?></textarea>
                       </div>                      
                     </div>
 

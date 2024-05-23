@@ -14,7 +14,7 @@ $rsTable = $squeryTable->fetchAll();
 
 // Fetch counts for each status
 $statusCounts = [];
-$statuses = ['ส่งซ่อม', 'ยืม/ใช้งาน', 'ชำรุด', 'ส่งครุจำหน่าย', 'สูญหาย'];
+$statuses = ['ส่งซ่อม', 'ยืม/ใช้งาน', 'ชำรุด', 'ส่งรุจำหน่าย', 'สูญหาย'];
 foreach ($statuses as $statusKey) {
     $countQuery = $condb->prepare("SELECT COUNT(*) as count FROM tbl_table WHERE status = :status");
     $countQuery->execute([':status' => $statusKey]);
@@ -51,7 +51,7 @@ foreach ($statuses as $statusKey) {
               <a href="datatable.php?act=s1" class="btn btn-info">ส่งซ่อม (<?= $statusCounts['ส่งซ่อม'] ?>)</a>
               <a href="datatable.php?act=s2" class="btn btn-success">ยืม/ใช้งาน (<?= $statusCounts['ยืม/ใช้งาน'] ?>)</a>
               <a href="datatable.php?act=s3" class="btn btn-warning">ชำรุด (<?= $statusCounts['ชำรุด'] ?>)</a>
-              <a href="datatable.php?act=s4" class="btn btn-danger">ส่งครุจำหน่าย (<?= $statusCounts['ส่งครุจำหน่าย'] ?>)</a>               
+              <a href="datatable.php?act=s4" class="btn btn-danger">ส่งรุจำหน่าย (<?= $statusCounts['ส่งรุจำหน่าย'] ?>)</a>               
               <a href="datatable.php?act=s5" class="btn btn-danger">สูญหาย (<?= $statusCounts['สูญหาย'] ?>)</a>
             </div>
             <!-- /.card-header -->
@@ -60,12 +60,12 @@ foreach ($statuses as $statusKey) {
                 <thead>
                   <tr class="table-active">
                     <th width="5%" class="text-center">No.</th>
-                    <th width="28%">เลขทะเบียนครุภัณฑ์</th>
+                    <th width="30%">ทะเบียนครุภัณฑ์</th>
                     <th width="25%">S/N</th>
-                    <th width="12%">ประเภท</th>
+                    <th width="16%">ประเภท</th>
                     <th width="11%" class="text-center">สถานะ</th>
                     <th width="5%" class="text-center">ดู</th>
-                    <th width="11%" class="text-center">แก้ไข</th>
+                    <th width="5%" class="text-center">แก้ไข</th>
                     <th width="5%" class="text-center">ลบ</th>
                   </tr>
                 </thead>

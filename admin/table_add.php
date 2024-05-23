@@ -119,12 +119,43 @@
                       <div class="col-sm-2">
                             <select name="status" class="form-control" required>
                               <option value=""> -เลือก-</option>
-                              <option value="ปกติ"> ส่งซ่อม </option>
+                              <option value="ส่งซ่อม"> ส่งซ่อม </option>
                               <option value="ยืม/ใช้งาน"> ยืม/ใช้งาน </option>
                               <option value="ชำรุด"> ชำรุด </option> 
-                              <option value="ส่งครุจำหน่าย"> ส่งครุจำหน่าย </option>     
+                              <option value="ส่งรุจำหน่าย"> ส่งรุจำหน่าย </option>     
                               <option value="สูญหาย"> สูญหาย </option>                 
                             </select>
+                      </div>                      
+                    </div>
+
+                    <br>
+
+                    <p style="color:red;">*หมายเหตุ ยืม/ใช้งาน</p>
+                    <div class="form-group row">
+                      <label class="col-sm-2">หน่วยที่ใช้งาน</label>
+                      <div class="col-sm-4">
+                            <input type="text" name="agen_lend" class="form-control" placeholder="หน่วยที่ใช้งาน">
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">ชื่อผู้ใช้งาน</label>
+                      <div class="col-sm-4">
+                            <input type="text" name="name_lend" class="form-control" placeholder="ชื่อผู้ใช้งาน">
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">ว/ด/ป ที่ยืม</label>
+                      <div class="col-sm-2">
+                            <input type="date" name="date_lend" class="form-control"  placeholder="ว/ด/ป ที่ยืม">
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">โทร</label>
+                      <div class="col-sm-4">
+                            <input type="text" name="tel_lend" class="form-control"  placeholder="โทร">
                       </div>                      
                     </div>
 
@@ -159,7 +190,12 @@
                     && isset($_POST['doc']) 
                     && isset($_POST['price']) 
                     && isset($_POST['evidence']) 
-                    && isset($_POST['status'])){
+                    && isset($_POST['status'])
+                    &&isset($_POST['agen_lend']) 
+                    && isset($_POST['name_lend']) 
+                    && isset($_POST['date_lend'])
+                    && isset($_POST['tel_lend'])
+                    ){
 
                         //echo 'ถูกเงื่อนไขส่งข้อมูลมาได้';
                         //ประกาศตัวแปรรับค่าจากฟอร์ม                       
@@ -176,6 +212,10 @@
                         $price = $_POST['price'];
                         $evidence = $_POST['evidence'];
                         $status = $_POST['status'];
+                        $agen_lend = $_POST['agen_lend'];
+                        $name_lend = $_POST['name_lend'];
+                        $date_lend = $_POST['date_lend'];
+                        $tel_lend = $_POST['tel_lend'];
                                                
                           //sql insert
                         $stmtInsertTable = $condb->prepare("INSERT INTO tbl_table 
@@ -192,7 +232,11 @@
                             doc,
                             price,
                             evidence,
-                            status
+                            status,
+                            agen_lend,
+                            name_lend,
+                            date_lend,
+                            tel_lend
                         )
 
                         VALUES 
@@ -209,7 +253,11 @@
                             :doc,
                             :price,
                             :evidence,
-                            :status
+                            :status,
+                            :agen_lend,
+                            :name_lend,
+                            :date_lend,
+                            :tel_lend   
                         )"
                         );
 
@@ -227,6 +275,10 @@
                         $stmtInsertTable->bindParam(':price', $price , PDO::PARAM_STR);
                         $stmtInsertTable->bindParam(':evidence', $evidence , PDO::PARAM_STR);
                         $stmtInsertTable->bindParam(':status', $status , PDO::PARAM_STR);
+                        $stmtInsertTable->bindParam(':agen_lend', $agen_lend, PDO::PARAM_STR);
+                        $stmtInsertTable->bindParam(':name_lend', $name_lend , PDO::PARAM_STR);
+                        $stmtInsertTable->bindParam(':date_lend', $date_lend , PDO::PARAM_STR);
+                        $stmtInsertTable->bindParam(':tel_lend', $tel_lend , PDO::PARAM_STR);
                                              
                         $result = $stmtInsertTable->execute();
 
@@ -236,7 +288,7 @@
                             echo '<script>
                                  setTimeout(function() {
                                   swal({
-                                      title: "เพิ่มข้อมูลครุภัณฑ์สำเร็จ",
+                                      title: "เพิ่มข้อมูลสำเร็จ",
                                       type: "success"
                                   }, function() {
                                       window.location = "datatable.php"; //หน้าที่ต้องการให้กระโดดไป

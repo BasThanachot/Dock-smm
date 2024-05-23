@@ -12,9 +12,10 @@ if ($status) {
 }
 $rsTable = $squeryTable->fetchAll();
 
+
 // Fetch counts for each status
 $statusCounts = [];
-$statuses = ['ส่งซ่อม', 'ยืม/ใช้งาน', 'ชำรุด', 'ส่งครุจำหน่าย', 'สูญหาย'];
+$statuses = ['ส่งซ่อม', 'ยืม/ใช้งาน', 'ชำรุด', 'ส่งรุจำหน่าย', 'สูญหาย'];
 foreach ($statuses as $statusKey) {
     $countQuery = $condb->prepare("SELECT COUNT(*) as count FROM tbl_table WHERE status = :status");
     $countQuery->execute([':status' => $statusKey]);
@@ -50,7 +51,7 @@ foreach ($statuses as $statusKey) {
               <a href="datatable.php?act=s1" class="btn btn-info">ส่งซ่อม (<?= $statusCounts['ส่งซ่อม'] ?>)</a>
               <a href="datatable.php?act=s2" class="btn btn-success">ยืม/ใช้งาน (<?= $statusCounts['ยืม/ใช้งาน'] ?>)</a>
               <a href="datatable.php?act=s3" class="btn btn-warning">ชำรุด (<?= $statusCounts['ชำรุด'] ?>)</a>
-              <a href="datatable.php?act=s4" class="btn btn-danger">ส่งครุจำหน่าย (<?= $statusCounts['ส่งครุจำหน่าย'] ?>)</a>               
+              <a href="datatable.php?act=s4" class="btn btn-danger">ส่งรุจำหน่าย (<?= $statusCounts['ส่งรุจำหน่าย'] ?>)</a>               
               <a href="datatable.php?act=s5" class="btn btn-danger">สูญหาย (<?= $statusCounts['สูญหาย'] ?>)</a>
             </div>
             <!-- /.card-header -->
@@ -59,11 +60,10 @@ foreach ($statuses as $statusKey) {
                 <thead>
                   <tr class="table-active">
                     <th width="5%" class="text-center">No.</th>
-                    <th width="22%">เลขทะเบียนครุภัณฑ์</th>
-                    <th width="22%">S/N</th>
-                    <th width="15%">วัน/เดือน/ปี</th>
-                    <th width="10%">ราคา/ชุด</th>
+                    <th width="35%">ชื่อข้อมูลทรัพย์สิน</th>
+                    <th width="22%">S/N</th>                   
                     <th width="10%" class="text-center">สถานะ</th>
+                    <th width="12%" class="text-center">บันทึกยืม</th>
                     <th width="8%" class="text-center">คืน</th>
                     <th width="8%" class="text-center">view</th>
                   </tr>
@@ -74,20 +74,28 @@ foreach ($statuses as $statusKey) {
                   foreach($rsTable as $row){ ?>     
                   <tr>
                     <td align="center"> <?php echo $i++ ?></td>
-                    <td><?=$row['no'];?> </td>
+                    <td>
+                        <?=$row['type_group'];?> <br>
+                        <?=$row['no'];?> <br>
+                        <?=$row['name_lend']?> ว/ด/ปที่ยืม <?=$row['date_lend'];?>
+                    </td>
                     <td><?=$row['sn'];?> </td>
-                    <td><?=$row['date'];?> </td>
-                    <td><?=number_format($row['price']);?> </td>
                     <td><?=$row['status'];?> </td>
                     <td align="center">
+                      <a href="#" class="btn btn-success btn-sm actionButton" data-action="view">
+                        
+                      <i class="fas fa-book"></i> 
+                      </a>
+                    </td>
+                    <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">
-                      <p>รับคืน</p>  
-                      <i class="fas fa-eye me-1"></i> 
+                        
+                      <i class="fas fa-undo"></i> 
                       </a>
                     </td>
                     <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=edit" class="btn btn-primary btn-sm actionButton" data-action="edit">
-                      <p>something1</p>  
+                        
                       <i class="fas fa-edit me-1"></i></a>
                     </td>
                    
