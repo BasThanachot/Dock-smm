@@ -28,6 +28,9 @@ if( $_SESSION["title_name"] != "Admin"){
 
     }else if($act =='view') {
         include 'table_view.php';
+        
+    }else if($act =='view_s2') {
+        include 'table_view_s2.php';
 
     }else if($act =='s1') {
         include 'table_s1.php';
@@ -35,8 +38,14 @@ if( $_SESSION["title_name"] != "Admin"){
     }else if($act =='s2') {
         include 'table_s2.php';
      
-    }else if($act =='add_s2') {
-        include 'table_add_s2.php';
+    }else if($act =='view_s2') {
+        include 'table_view_s2.php';
+
+    }else if($act =='edit_s2') {
+        include 'table_edit_s2.php';
+
+    }else if($act =='nl_s2') {
+        include 'table_namelend_s2.php';
 
     }else if($act =='s3') {
         include 'table_s3.php';
@@ -52,8 +61,6 @@ if( $_SESSION["title_name"] != "Admin"){
         include 'table_list.php';
     }
 
-
-    // list หรือ view วะ ตอนนี้
          
     include 'footer.php';
 

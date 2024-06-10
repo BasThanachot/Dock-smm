@@ -60,12 +60,12 @@ foreach ($statuses as $statusKey) {
                 <thead>
                   <tr class="table-active">
                     <th width="5%" class="text-center">No.</th>
-                    <th width="35%">ชื่อข้อมูลทรัพย์สิน</th>
-                    <th width="22%">S/N</th>                   
+                    <th width="57%">ชื่อข้อมูลทรัพย์สิน</th>                   
                     <th width="10%" class="text-center">สถานะ</th>
-                    <th width="12%" class="text-center">บันทึกยืม</th>
-                    <th width="8%" class="text-center">คืน</th>
-                    <th width="8%" class="text-center">view</th>
+                    <th width="5%" class="text-center">ดู</th>
+                    <th width="11%" class="text-center">คืน</th>
+                    <th width="7%" class="text-center">แก้ไข</th>
+                    <th width="7%" class="text-center">view</th>
                   </tr>
                 </thead>
                 <tbody>  
@@ -76,29 +76,38 @@ foreach ($statuses as $statusKey) {
                     <td align="center"> <?php echo $i++ ?></td>
                     <td>
                         <?=$row['type_group'];?> <br>
-                        <?=$row['no'];?> <br>
-                        <?=$row['name_lend']?> ว/ด/ปที่ยืม <?=$row['date_lend'];?>
+                        เลขทะเบียนครุภัณฑ์ : <?=$row['no'];?>,
+                        S/N : <?=$row['sn'];?> <br>
+                        <p style="color:red;"> <?=$row['name_lend']?>  ว/ด/ป ที่ยืม <?=$row['date_lend'];?> </p>  
                     </td>
-                    <td><?=$row['sn'];?> </td>
+
                     <td><?=$row['status'];?> </td>
                     <td align="center">
-                      <a href="#" class="btn btn-success btn-sm actionButton" data-action="view">
-                        
-                      <i class="fas fa-book"></i> 
+                    <a href="datatable.php?id=<?=$row['id'];?>&act=view_s2" class="btn btn-success btn-sm actionButton" data-action="view_s2">
+                        <i class="fas fa-eye me-1"></i> 
+                      </a>
                       </a>
                     </td>
+
                     <td align="center">
-                      <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">
+                      <a href="datatable.php?id=<?=$row['id'];?>&act=nl_s2" class="btn btn-success btn-sm actionButton" data-action="edit_s2">
                         
-                      <i class="fas fa-undo"></i> 
+                      บันทึกรับคืน
                       </a>
                     </td>
+
+                    <td align="center">
+                      <a href="datatable.php?id=<?=$row['id'];?>&act=edit_s2" class="btn btn-warning btn-sm actionButton" data-action="edit">
+                        
+                      <i class="fas fa-edit me-1"></i></a>
+                    </td>
+                   
                     <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=edit" class="btn btn-primary btn-sm actionButton" data-action="edit">
                         
                       <i class="fas fa-edit me-1"></i></a>
                     </td>
-                   
+
                   </tr>
                   <?php } ?>
                 </tbody>

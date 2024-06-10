@@ -2,7 +2,7 @@
     <strong>Copyright &copy; 2024 <a href="#">กรมอู่ทหารเรือ</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Thanachot H.</b> 78086
+      <b> Thanachot H.</b> 78086
     </div>
   </footer>
 

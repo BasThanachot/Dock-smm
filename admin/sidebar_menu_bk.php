@@ -34,7 +34,17 @@
                 จัดการข้อมูลบุคลากร
               </p>
             </a>
-          </li>        
+          </li>
+          
+          <ion-icon name="exit-outline"></ion-icon>
+          <li class="nav-item">
+            <a href="type.php" class="nav-link">
+              <i class="nav-icon fas fa-database"></i>
+              <p>
+                ประเภทครุภัณฑ์
+              </p>
+            </a>
+          </li>
 
           <ion-icon name="exit-outline"></ion-icon>
           <li class="nav-item">

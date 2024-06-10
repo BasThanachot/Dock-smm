@@ -60,13 +60,11 @@ foreach ($statuses as $statusKey) {
                 <thead>
                   <tr class="table-active">
                     <th width="5%" class="text-center">No.</th>
-                    <th width="30%">ทะเบียนครุภัณฑ์</th>
-                    <th width="25%">S/N</th>
-                    <th width="16%">ประเภท</th>
+                    <th width="76%">ข้อมูลทรัพย์สิน</th>       
                     <th width="11%" class="text-center">สถานะ</th>
-                    <th width="5%" class="text-center">ดู</th>
-                    <th width="5%" class="text-center">แก้ไข</th>
-                    <th width="5%" class="text-center">ลบ</th>
+                    <th width="5%">ดู</th>
+                    <th width="5%">ลบ</th>
+                    
                   </tr>
                 </thead>
                 <tbody>  
@@ -75,23 +73,24 @@ foreach ($statuses as $statusKey) {
                   foreach($rsTable as $row){ ?>     
                   <tr>
                     <td align="center"> <?php echo $i++ ?></td>
-                    <td><?=$row['no'];?> </td>
-                    <td><?=$row['sn'];?> </td>
-                    <td><?=$row['type_group'];?> </td>
+                    <td>
+                      <b><?=$row['type_group'];?> </b><br>
+                      <b>รายละเอียด : </b><?=$row['detail'];?> <br> 
+                      <b>ทะเบียน : </b><?=$row['no'];?> <br> 
+                      <b>S/N : </b><?=$row['sn'];?> <br>
+                    </td>                  
                     <td><?=$row['status'];?> </td>
+                    
                     <td align="center">
                       <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">
-                        <i class="fas fa-eye me-1"></i> 
+                            <i class="fas fa-eye me-1"></i> 
                       </a>
                     </td>
-                    <td align="center">
-                      <a href="datatable.php?id=<?=$row['id'];?>&act=edit" class="btn btn-warning btn-sm actionButton" data-action="edit">
-                        <i class="fas fa-edit me-1"></i></a>
-                    </td>
+
                     <td align="center">                                                
-                      <a href="datatable.php?id=<?=$row['id'];?>&act=delete" class="btn btn-danger btn-sm actionButton" data-action="delete" onclick="return confirm('ยืนยันการลลบข้อมูล??');"> 
-                        <i class="fas fa-trash-alt me-1"></i></a>
+                      <a href="datatable.php?id=<?=$row['id'];?>&act=delete" class="btn btn-danger btn-sm actionButton" data-action="delete" onclick="return confirm('ยืนยันการลลบข้อมูล??');"> <i class="fas fa-trash-alt me-1"></i></a>
                     </td>
+
                   </tr>
                   <?php } ?>
                 </tbody>

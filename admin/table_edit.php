@@ -144,6 +144,7 @@
                       </div>                      
                     </div>                   
                       
+
                     <div class="form-group row">
                       <label class="col-sm-2"></label>
                       <div class="col-sm-4">
@@ -175,7 +176,12 @@
                     && isset($_POST['doc']) 
                     && isset($_POST['price']) 
                     && isset($_POST['evidence']) 
-                    && isset($_POST['status'])){
+                    && isset($_POST['status'])
+                    &&isset($_POST['agen_lend']) 
+                    && isset($_POST['name_lend']) 
+                    && isset($_POST['date_lend'])
+                    && isset($_POST['tel_lend'])
+                    ){
                  
 
                   //ประกาศตัวแปรรับค่าจากฟอร์ม
@@ -193,6 +199,10 @@
                   $price = $_POST['price'];
                   $evidence = $_POST['evidence'];
                   $status = $_POST['status'];
+                  $agen_lend = $_POST['agen_lend'];
+                  $name_lend = $_POST['name_lend'];
+                  $date_lend = $_POST['date_lend'];
+                  $tel_lend = $_POST['tel_lend'];
 
                   //sql update
                   $stmtUpdate = $condb->prepare("UPDATE tbl_table SET 
@@ -208,7 +218,11 @@
                   doc=:doc,
                   price=:price,
                   evidence=:evidence,
-                  status=:status
+                  status=:status,
+                  agen_lend=:agen_lend,
+                  name_lend=:name_lend,
+                  date_lend=:date_lend,
+                  tel_lend=:tel_lend
                   WHERE id=:id
                   ");
                   //bindParam
@@ -226,6 +240,10 @@
                     $stmtUpdate->bindParam(':price', $price , PDO::PARAM_STR);
                     $stmtUpdate->bindParam(':evidence', $evidence , PDO::PARAM_STR);
                     $stmtUpdate->bindParam(':status', $status , PDO::PARAM_STR);
+                    $stmtUpdate->bindParam(':agen_lend', $agen_lend , PDO::PARAM_STR);
+                    $stmtUpdate->bindParam(':name_lend', $name_lend , PDO::PARAM_STR);
+                    $stmtUpdate->bindParam(':date_lend', $date_lend , PDO::PARAM_STR);
+                    $stmtUpdate->bindParam(':tel_lend', $tel_lend , PDO::PARAM_STR);
                                           
                     $result = $stmtUpdate->execute();
 

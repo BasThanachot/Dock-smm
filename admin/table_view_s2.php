@@ -1,5 +1,5 @@
 <?php
-    if(isset($_GET['id']) && $_GET['act'] == 'view'){
+    if(isset($_GET['id']) && $_GET['act'] == 'view_s2'){
 
       //single row query แสดงแค่ 1 รายการ
       $stmtTableDetail = $condb->prepare("SELECT * FROM tbl_table WHERE id=?");
@@ -68,7 +68,7 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">เลขทะเบียนครุภัณฑ์</label>
-                      <div class="col-sm-3">
+                      <div class="col-sm-2">
                             <input type="text" name="no" class="form-control" value="<?php echo $row['no'];?>"disabled >
                       </div>                      
                     </div>
@@ -82,14 +82,14 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">รุ่น/แบบ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="sn" class="form-control" value="<?php echo $row['sn'];?>" disabled>
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">สถานที่ตั้ง/หน่วยรับผิดชอบ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-3">
                             <input type="text" name="location" class="form-control" value="<?php echo $row['location'];?>" disabled>
                       </div>                      
                     </div>
@@ -110,7 +110,7 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">ที่เอกสาร</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="doc" class="form-control" value="<?php echo $row['doc'];?>" disabled>
                       </div>                      
                     </div>
@@ -145,13 +145,40 @@
                       </div>                      
                     </div>                   
                       
-                    
+                    <p style="color:red;">*หมายเหตุ ยืม/ใช้งาน</p>
+                    <div class="form-group row">
+                      <label class="col-sm-2">หน่วยที่ใช้งาน</label>
+                      <div class="col-sm-2">
+                            <input type="text" name="agen_lend" class="form-control" value="<?php echo $row['agen_lend'];?>" disabled>
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">ชื่อผู้ใช้งาน</label>
+                      <div class="col-sm-2">
+                            <input type="text" name="name_lend" class="form-control" value="<?php echo $row['name_lend'];?>" disabled>
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">ว/ด/ป ที่ยืม</label>
+                      <div class="col-sm-2">
+                            <input type="date(d-m-Y)" name="date_lend" class="form-control" value="<?php echo $row['date_lend'];?>" disabled>
+                      </div>                      
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-2">โทร</label>
+                      <div class="col-sm-1">
+                            <input type="text" name="tel_lend" class="form-control" value="<?php echo $row['tel_lend'];?>" disabled>
+                      </div>                      
+                    </div>
                       
                     <div class="form-group row">
                       <label class="col-sm-2"></label>
                       <div class="col-sm-4">
                         <input type="hidden" name="id" value="<?php echo $row['id']?>">
-                            <a href="datatable.php" class="btn btn-primary">ตกลง</a>
+                            <a href="datatable.php?act=s2" class="btn btn-primary">ตกลง</a>
                       </div> 
                     </div>  
                        

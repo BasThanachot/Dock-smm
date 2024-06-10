@@ -58,13 +58,10 @@ foreach ($statuses as $statusKey) {
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                   <tr class="table-active">
-                  <th width="5%" class="text-center">No.</th>
-                    <th width="24%">ทะเบียนครุภัณฑ์</th>
-                    <th width="24%">S/N</th>
-                    <th width="15%">วัน/เดือน/ปี</th>
-                    <th width="12%">ราคา/ชุด</th>
-                    <th width="12%" class="text-center">สถานะ</th>
-                    <th width="8%" class="text-center">ดู</th>
+                    <th width="5%" class="text-center">No.</th>
+                    <th width="82%">ชื่อข้อมูลทรัพย์สิน</th>                   
+                    <th width="10%" class="text-center">สถานะ</th>
+                    <th width="5%" class="text-center">ดู</th>                    
                   </tr>
                 </thead>
                 <tbody>  
@@ -73,10 +70,11 @@ foreach ($statuses as $statusKey) {
                   foreach($rsTable as $row){ ?>     
                   <tr>
                     <td align="center"> <?php echo $i++ ?></td>
-                    <td><?=$row['no'];?> </td>
-                    <td><?=$row['sn'];?> </td>
-                    <td><?=$row['date'];?> </td>
-                    <td><?=number_format($row['price']);?> </td>
+                    <td>
+                        <?=$row['type_group'];?> <br>
+                        รายละเอียด : <?=$row['detail'];?>,<br>
+                        เลขทะเบียนครุภัณฑ์ : <?=$row['no'];?>,<br>
+                        S/N : <?=$row['sn'];?> <br>
                     <td><?=$row['status'];?> </td>
                     <td align="center">
                     <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">
