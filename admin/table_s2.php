@@ -78,7 +78,8 @@ foreach ($statuses as $statusKey) {
                         <?=$row['type_group'];?> <br>
                         เลขทะเบียนครุภัณฑ์ : <?=$row['no'];?>,
                         S/N : <?=$row['sn'];?> <br>
-                        <p style="color:red;"> <?=$row['name_lend']?>  ว/ด/ป ที่ยืม <?=$row['date_lend'];?> </p>  
+                        <p style="color:red;"> <?=$row['name_lend']?>  ว/ด/ป ที่ยืม <?=$row['date_lend'];?> <br>
+                        ว/ด/ป คืน <?=$row['date_night'];?> </p> <br> 
                     </td>
 
                     <td><?=$row['status'];?> </td>
