@@ -69,18 +69,40 @@ foreach ($statuses as $statusKey) {
                   </tr>
                 </thead>
                 <tbody>  
-                  <?php 
-                  $i = 1; // Start number
-                  foreach($rsTable as $row){ ?>     
-                  <tr>
-                    <td align="center"> <?php echo $i++ ?></td>
-                    <td>
-                        <?=$row['type_group'];?> <br>
-                        เลขทะเบียนครุภัณฑ์ : <?=$row['no'];?>,
-                        S/N : <?=$row['sn'];?> <br>
-                        <p style="color:red;"> <?=$row['name_lend']?>  ว/ด/ป ที่ยืม <?=$row['date_lend'];?> <br>
-                        ว/ด/ป คืน <?=$row['date_night'];?> </p> <br> 
-                    </td>
+                 
+
+
+                    <?php 
+$i = 1; // Start number
+foreach($rsTable as $row) { 
+?>
+
+<?php
+// Convert date to DateTime object
+$date_lend = new DateTime($row['date_lend']);
+$date_lend_formatted = $date_lend->format('d/m/') . ($date_lend->format('Y') + 543);
+
+if (!empty($row['date_night'])) {
+    $date_night = new DateTime($row['date_night']);
+    $date_night_formatted = $date_night->format('d/m/') . ($date_night->format('Y') + 543);
+}
+?>
+
+<tr>
+    <td align="center"> <?php echo $i++ ?></td>
+    <td>
+        <?=$row['type_group'];?> <br>
+        เลขทะเบียนครุภัณฑ์ : <?=$row['no'];?>,
+        S/N : <?=$row['sn'];?> <br>
+        <p style="color:red;"> <?=$row['name_lend']?>  ว/ด/ป ที่ยืม <?=$date_lend_formatted;?> <br>
+        <?php if (!empty($row['date_night'])): ?>
+            ว/ด/ป คืน <?=$date_night_formatted;?> 
+        <?php endif; ?>
+        </p> <br>
+    </td>
+
+
+
 
                     <td><?=$row['status'];?> </td>
                     <td align="center">

@@ -14,6 +14,9 @@ if (isset($_GET['id']) && $_GET['act'] == 'nl_s2') {
 }
 ?>
 
+<!-- Include SweetAlert CSS and JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -89,8 +92,13 @@ if (isset($_GET['id']) && $_GET['act'] == 'nl_s2') {
                     <div class="col-sm-4">
                       <input type="hidden" name="id" value="<?php echo $row['id']?>">
                       <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+
+                      <input type="hidden" name="id" value="<?php echo $row['id']?>">
+                            <a href="datatable.php?act=s2" class="btn btn-info">กลับหน้าหลัก</a>
                     </div> 
                   </div>  
+
+                  
                    
                   </div>
 
@@ -116,11 +124,24 @@ if (isset($_GET['id']) && $_GET['act'] == 'nl_s2') {
                 $stmtUpdate->bindParam(':id', $id);
                 // $stmtUpdate->bindParam(':status', "ยืม/ใช้งาน");
 
-
                 if ($stmtUpdate->execute()) {
-                  echo "Update successful";
+                  echo "<script>
+                          Swal.fire({
+                            title: 'สำเร็จ!',
+                            text: 'อัพเดทข้อมูลเรียบร้อย',
+                            icon: 'success',
+                            confirmButtonText: 'ตกลง'
+                          });
+                        </script>";
                 } else {
-                  echo "Update failed";
+                  echo "<script>
+                          Swal.fire({
+                            title: 'ผิดพลาด!',
+                            text: 'ไม่สามารถอัพเดทข้อมูลได้',
+                            icon: 'error',
+                            confirmButtonText: 'ตกลง'
+                          });
+                        </script>";
                 }
               }
               ?>

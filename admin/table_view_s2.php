@@ -163,7 +163,8 @@
                     <div class="form-group row">
                       <label class="col-sm-2">ว/ด/ป ที่ยืม</label>
                       <div class="col-sm-2">
-                            <input type="date(d-m-Y)" name="date_lend" class="form-control" value="<?php echo $row['date_lend'];?>" disabled>
+                      
+                            <input type="date" name="date_lend" class="form-control" value="<?php echo $row['date_lend'];?>" disabled>
                       </div>                      
                     </div>
 

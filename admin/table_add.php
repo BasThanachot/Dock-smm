@@ -24,14 +24,14 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">ส่วนราชการ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="governmentagency" class="form-control" required placeholder="ส่วนราชการ">
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">หน่วยงาน</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="agen" class="form-control" required placeholder="หน่วยงาน">
                       </div>                      
                     </div>
@@ -51,7 +51,7 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">เลขทะเบียนครุภัณฑ์</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-3">
                             <input type="text" name="no" class="form-control" required placeholder="เลขทะเบียนครุภัณฑ์">
                       </div>                      
                     </div>
@@ -66,14 +66,14 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">รุ่น/แบบ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-3">
                             <input type="text" name="sn" class="form-control" required placeholder="S/N">
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">สถานที่ตั้ง/หน่วยรับผิดชอบ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="location" class="form-control" required placeholder="หน่วยที่ใช้งาน">
                       </div>                      
                     </div>
@@ -95,7 +95,7 @@
                       
                     <div class="form-group row">
                       <label class="col-sm-2">ที่เอกสาร</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="doc" class="form-control" required placeholder="ที่เอกสาร">
                       </div>                      
                     </div>
@@ -133,14 +133,14 @@
                     <p style="color:red;">*หมายเหตุ ยืม/ใช้งาน</p>
                     <div class="form-group row">
                       <label class="col-sm-2">หน่วยที่ใช้งาน</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="agen_lend" class="form-control" placeholder="หน่วยที่ใช้งาน">
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ชื่อผู้ใช้งาน</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="name_lend" class="form-control" placeholder="ชื่อผู้ใช้งาน">
                       </div>                      
                     </div>
@@ -154,7 +154,7 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">โทร</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-1">
                             <input type="text" name="tel_lend" class="form-control"  placeholder="โทร">
                       </div>                      
                     </div>
