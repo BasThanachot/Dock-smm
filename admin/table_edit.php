@@ -40,21 +40,21 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">ส่วนราชการ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="governmentagency" class="form-control" value="<?php echo $row['governmentagency'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">หน่วยงาน</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="agen" class="form-control" value="<?php echo $row['agen'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ประเภท</label>
-                      <div class="col-sm-3">
+                      <div class="col-sm-2">
                             <select name="type_group" class="form-control" required>
                               <option value="<?php echo $row['type_group'];?>"> <?php echo $row['type_group'];?> </option>
                               <option disabled>-- เลือกข้อมูล --</option>
@@ -68,7 +68,7 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">เลขทะเบียนครุภัณฑ์</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-3">
                             <input type="text" name="no" class="form-control" value="<?php echo $row['no'];?>" >
                       </div>                      
                     </div>
@@ -82,56 +82,56 @@
 
                     <div class="form-group row">
                       <label class="col-sm-2">รุ่น/แบบ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-3">
                             <input type="text" name="sn" class="form-control" value="<?php echo $row['sn'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">สถานที่ตั้ง/หน่วยรับผิดชอบ</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="location" class="form-control" value="<?php echo $row['location'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">วัน/เดือน/ปี</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="date" name="date" class="form-control" value="<?php echo $row['date'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">วิธีการได้มา</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="supply" class="form-control" value="<?php echo $row['supply'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ที่เอกสาร</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="doc" class="form-control" value="<?php echo $row['doc'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">ราคาหน่วย/ชุด/กลุ่ม</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="price" class="form-control" value="<?php echo $row['price'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">หลักฐานการจ่าย</label>
-                      <div class="col-sm-4">
+                      <div class="col-sm-2">
                             <input type="text" name="evidence" class="form-control" value="<?php echo $row['evidence'];?>" >
                       </div>                      
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-2">สถานะ</label>
-                      <div class="col-sm-3">
+                      <div class="col-sm-2">
                             <select name="status" class="form-control" required>
                               <option value="<?php echo $row['status'];?>"> <?php echo $row['status'];?> </option>
                               <option disabled>-- เลือกข้อมูล --</option>

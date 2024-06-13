@@ -59,9 +59,10 @@ foreach ($statuses as $statusKey) {
                 <thead>
                   <tr class="table-active">
                     <th width="5%" class="text-center">No.</th>
-                    <th width="82%">ชื่อข้อมูลทรัพย์สิน</th>                   
+                    <th width="77%">ชื่อข้อมูลทรัพย์สิน</th>                   
                     <th width="10%" class="text-center">สถานะ</th>
-                    <th width="5%" class="text-center">ดู</th>                    
+                    <th width="5%" class="text-center">ดู</th>   
+                    <th width="5%" class="text-center">แก้ไข</th>                  
                   </tr>
                 </thead>
                 <tbody>  
@@ -76,12 +77,19 @@ foreach ($statuses as $statusKey) {
                         เลขทะเบียนครุภัณฑ์ : <?=$row['no'];?>,<br>
                         S/N : <?=$row['sn'];?> <br>
                     <td><?=$row['status'];?> </td>
+
                     <td align="center">
                     <a href="datatable.php?id=<?=$row['id'];?>&act=view" class="btn btn-success btn-sm actionButton" data-action="view">
                         <i class="fas fa-eye me-1"></i> 
                       </a>
                     </td>
                    
+                    <td align="center">
+                      <a href="datatable.php?id=<?=$row['id'];?>&act=edit" class="btn btn-warning btn-sm actionButton" data-action="edit">
+                        
+                      <i class="fas fa-edit me-1"></i></a>
+                    </td>
+
                   </tr>
                   <?php } ?>
                 </tbody>

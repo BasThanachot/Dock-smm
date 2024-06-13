@@ -55,7 +55,14 @@ if (isset($_GET['id']) && $_GET['act'] == 'nl_s2') {
                   <div class="form-group row">
                     <label class="col-sm-2">ว/ด/ป คืน</label>
                     <div class="col-sm-2">
-                          <input type="date" name="date_night" class="form-control">
+                          <input type="date" name="date_night" class="form-control"  required placeholder="ว/ด/ป คืน">
+                    </div>                      
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-2">ชื่อผู้คืน</label>
+                    <div class="col-sm-2">
+                          <input type="text" name="name_return" class="form-control" required placeholder="ชื่อผู้คืน">
                     </div>                      
                   </div>
 
@@ -108,19 +115,23 @@ if (isset($_GET['id']) && $_GET['act'] == 'nl_s2') {
 
               <?php
               if (isset($_POST['id']) 
-                  && isset($_POST['date_night'])) {
+                  && isset($_POST['date_night'])
+                  && isset($_POST['name_return'])) {
 
                 //ประกาศตัวแปรรับค่าจากฟอร์ม
                 $id = $_POST['id'];
                 $date_night = $_POST['date_night'];
+                $name_return = $_POST['name_return'];
 
                 //sql update
                 $stmtUpdate = $condb->prepare("UPDATE tbl_table SET 
-                  date_night=:date_night
+                  date_night=:date_night,
+                  name_return=:name_return
                   WHERE id=:id
                 ");
                 
                 $stmtUpdate->bindParam(':date_night', $date_night);
+                $stmtUpdate->bindParam(':name_return', $name_return);
                 $stmtUpdate->bindParam(':id', $id);
                 // $stmtUpdate->bindParam(':status', "ยืม/ใช้งาน");
 

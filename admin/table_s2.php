@@ -94,12 +94,17 @@ if (!empty($row['date_night'])) {
         <?=$row['type_group'];?> <br>
         เลขทะเบียนครุภัณฑ์ : <?=$row['no'];?>,
         S/N : <?=$row['sn'];?> <br>
-        <p style="color:red;"> <?=$row['name_lend']?>  ว/ด/ป ที่ยืม <?=$date_lend_formatted;?> <br>
-        <?php if (!empty($row['date_night'])): ?>
-            ว/ด/ป คืน <?=$date_night_formatted;?> 
-        <?php endif; ?>
+        <p style="color:red;">
+            <?=$row['name_lend']?>  ว/ด/ป ที่ยืม <?=$date_lend_formatted;?> <br>
+            <?php if (!empty($row['date_night'])): ?>
+                ว/ด/ป คืน <?=$date_night_formatted;?> 
+            <?php endif; ?> <br>
+            <?php if (!empty($row['name_return'])): ?>
+                ชื่อผู้คืน : <?=$row['name_return'];?>
+            <?php endif; ?>
         </p> <br>
     </td>
+
 
 
 
